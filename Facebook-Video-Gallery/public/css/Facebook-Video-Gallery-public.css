@@ -1,0 +1,29 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ 
+ .video-container {
+    
+ }
+
+ .video-div {
+ }
+ .video-div img {
+     width:80%;
+     text-align:  center;
+ }
+
+
+.video-div-header h1 {
+    font-size:1.1em!important;
+    color: #373f42;
+    min-height: 1.1em;
+    font-weight: bold;
+ }
+
+.video-div-header h2 {
+    font-size:.75em !important;
+    color:#96a9b5;
+    min-height:.75em;
+ }
