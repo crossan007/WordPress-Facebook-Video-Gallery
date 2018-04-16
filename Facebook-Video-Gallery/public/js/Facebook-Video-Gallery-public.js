@@ -1,6 +1,21 @@
 (function( $ ) {
 	'use strict';
 
+	console.log("test");
+	$(document).ready(function(){
+		$(".video-div").click(function() {
+			$(this).find(".video-div-body").html(atob($(this).data("embed")));
+			$(this).removeClass("4u");
+			$(this).removeClass("12u(mobile)");
+			$(this).addClass("video-fullscreen");
+			$(this).find(".close").show();
+		})
+
+		$(document).on("click",".close-button",function() {
+			window.location.reload();
+		})
+	});
+	
 	/**
 	 * All of the code for your public-facing JavaScript source
 	 * should reside in this file.
