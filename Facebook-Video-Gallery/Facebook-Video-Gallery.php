@@ -36,7 +36,7 @@ define( PLUGIN_VERSION, '1.0.0' );
  * The code that runs during plugin activation.
  * This action is documented in includes/class-Facebook-Video-Gallery-activator.php
  */
-function activate_plugin_name() {
+function activate_fbvg_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-Facebook-Video-Gallery-activator.php';
 	Facebook_Video_Gallery_Activator::activate();
 }
@@ -45,13 +45,13 @@ function activate_plugin_name() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-Facebook-Video-Gallery-deactivator.php
  */
-function deactivate_plugin_name() {
+function deactivate_fbvg_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-Facebook-Video-Gallery-deactivator.php';
 	Facebook_Video_Gallery_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_fbvg_plugin' );
+register_deactivation_hook( __FILE__, 'deactivate_fbvg_plugin' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -68,10 +68,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-Facebook-Video-Gallery.php
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
+function run_fbvg_plugin() {
 
 	$plugin = new Facebook_Video_Gallery();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_fbvg_plugin();
