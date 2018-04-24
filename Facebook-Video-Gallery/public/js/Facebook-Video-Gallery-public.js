@@ -3,17 +3,23 @@
 
 	console.log("test");
 	$(document).ready(function(){
-		$(".video-div").click(function() {
-			$(this).find(".video-div-body").html(atob($(this).data("embed")));
-			$(this).removeClass("4u");
-			$(this).removeClass("12u(mobile)");
-			$(this).addClass("video-fullscreen");
-			$(this).find(".close").show();
-		})
 
-		$(document).on("click",".close-button",function() {
-			window.location.reload();
-		})
+		window.videomodal = document.getElementById('videoModal');
+		window.videoclose = document.getElementsByClassName("close")[0];
+		window.onclick = function(event) {
+			if (event.target == window.videomodal) {
+				window.videomodal.style.display = "none";
+			}
+		}
+
+		$(".video-div").click(function() {
+			window.videomodal.style.display = "block";
+			$("#videoModal .modal-content").html("<iframe src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com"+ $(this).data("permalink")+ "\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allowFullScreen=\"true\"></iframe>");
+			window.videoclose.onclick = function() {
+				window.videomodal.style.display = "none";
+				
+			}
+		});
 	});
 	
 	/**

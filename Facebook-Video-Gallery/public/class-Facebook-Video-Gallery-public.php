@@ -128,6 +128,7 @@ class Facebook_Video_Gallery_Public {
 
 	}
 
+
 	/**
 	 * Callback for [simple-staff-list]
 	 *
@@ -137,11 +138,15 @@ class Facebook_Video_Gallery_Public {
 		
 		global $crmc_sc_output;
 		
-		$this->fbvg_list_shortcode_atts = shortcode_atts( $this->fbvg_list_shortcode_atts_defaults, $atts, 'Facebook-Video-Gallery-list' );
-		//print_r($atts);
+		date_default_timezone_set(get_option('timezone_string'));
+		$this->videos = get_option("_fbvg_api_response");
 		include( 'partials/Facebook-Video-Gallery-list-shortcode-display.php' );
 		return $crmc_sc_output;
 
+	}
+
+	public function test(){
+		return "a";
 	}
 
 }
